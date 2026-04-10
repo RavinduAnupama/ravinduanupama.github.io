@@ -3,67 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ravindu | Developer</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- AOS Animation -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
 <style>
 body {
+    margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    transition: 0.3s;
+    scroll-behavior: smooth;
 }
 
-.dark {
-    background: #0f172a;
-    color: white;
-}
-
-/* Navbar */
-.navbar {
-    backdrop-filter: blur(10px);
+/* Full sections */
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
 }
 
 /* Hero */
 .hero {
-    height: 100vh;
-    background: linear-gradient(135deg, #4f46e5, #06b6d4);
-    display: flex;
-    align-items: center;
-    text-align: center;
+    background: #000;
     color: white;
 }
 
-/* Glass Card */
-.glass {
-    background: rgba(255,255,255,0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    padding: 20px;
+.hero h1 {
+    font-size: 70px;
+    font-weight: bold;
 }
 
-/* Skills */
-.progress-bar {
-    transition: width 2s;
+.hero p {
+    font-size: 20px;
+    opacity: 0.7;
 }
 
-/* Gallery */
-.gallery img {
-    border-radius: 15px;
-    transition: 0.4s;
-}
-.gallery img:hover {
-    transform: scale(1.1);
+/* About */
+.about {
+    background: #f5f5f5;
 }
 
-/* Footer */
-footer {
+/* Work */
+.work {
     background: #111;
     color: white;
-    padding: 20px;
-    text-align: center;
+}
+
+.project {
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.project:hover {
+    transform: translateX(10px);
+}
+
+/* Contact */
+.contact {
+    background: #fff;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white !important;
+}
+
+/* Dark toggle */
+.dark {
+    background: #000 !important;
+    color: white !important;
 }
 </style>
 </head>
@@ -71,149 +85,79 @@ footer {
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <div class="container">
-<a class="navbar-brand" href="#">Ravindu</a>
+<a class="navbar-brand" href="#">R</a>
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto">
 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-<li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 </ul>
-
-<button onclick="toggleMode()" class="btn btn-light ms-3">🌙</button>
-</div>
 </div>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 <section id="home" class="hero">
-<div class="container">
-<h1>I’m Ravindu</h1>
-<h3><span id="typing"></span></h3>
-<a href="cv.pdf" class="btn btn-light mt-3">Download CV</a>
+<div>
+<h1>Ravindu.</h1>
+<p id="typing"></p>
 </div>
 </section>
 
-<!-- About -->
-<section id="about" class="py-5">
-<div class="container text-center" data-aos="fade-up">
-<h2>About Me</h2>
-<div class="glass mt-4">
-<p>I create modern, fast and responsive web applications.</p>
-</div>
-</div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="py-5 bg-light">
-<div class="container" data-aos="fade-up">
-<h2 class="text-center mb-4">Skills</h2>
-
-<div class="mb-3">HTML
-<div class="progress"><div class="progress-bar bg-success" style="width:90%"></div></div>
-</div>
-
-<div class="mb-3">CSS
-<div class="progress"><div class="progress-bar bg-info" style="width:85%"></div></div>
-</div>
-
-<div class="mb-3">JavaScript
-<div class="progress"><div class="progress-bar bg-warning" style="width:75%"></div></div>
-</div>
-
+<!-- ABOUT -->
+<section id="about" class="about">
+<div>
+<h2>About</h2>
+<p>
+I’m a developer focused on creating modern, clean and high-performance websites.
+I build user-friendly interfaces and scalable systems.
+</p>
 </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="py-5">
-<div class="container text-center" data-aos="zoom-in">
-<h2>Projects</h2>
+<!-- WORK -->
+<section id="work" class="work">
+<div>
+<h2>Selected Work</h2>
 
-<div class="row mt-4">
-<div class="col-md-4">
-<div class="glass">
-<h5>Project 1</h5>
-<p>Web App</p>
-</div>
+<div class="project">
+<h4>Project One</h4>
+<p>Modern web application</p>
 </div>
 
-<div class="col-md-4">
-<div class="glass">
-<h5>Project 2</h5>
-<p>System</p>
-</div>
+<div class="project">
+<h4>Project Two</h4>
+<p>Portfolio system</p>
 </div>
 
-<div class="col-md-4">
-<div class="glass">
-<h5>Project 3</h5>
-<p>Design</p>
-</div>
-</div>
+<div class="project">
+<h4>Project Three</h4>
+<p>Business website</p>
 </div>
 
 </div>
 </section>
 
-<!-- Gallery -->
-<section id="gallery" class="py-5 bg-light">
-<div class="container" data-aos="fade-up">
-<h2 class="text-center">Gallery</h2>
-
-<div class="row mt-4 gallery">
-<div class="col-md-4"><img src="https://picsum.photos/300/200"></div>
-<div class="col-md-4"><img src="https://picsum.photos/301/200"></div>
-<div class="col-md-4"><img src="https://picsum.photos/302/200"></div>
-</div>
-
-</div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="py-5">
-<div class="container text-center" data-aos="fade-up">
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<div>
 <h2>Contact</h2>
 
-<form action="https://formspree.io/f/your-id" method="POST" class="mt-4">
-<input type="text" name="name" class="form-control mb-3" placeholder="Name" required>
-<input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
-<textarea name="message" class="form-control mb-3" placeholder="Message"></textarea>
-<button class="btn btn-primary">Send Message</button>
+<form action="https://formspree.io/f/your-id" method="POST">
+<input type="text" name="name" placeholder="Name" class="form-control mb-3">
+<input type="email" name="email" placeholder="Email" class="form-control mb-3">
+<textarea name="message" placeholder="Message" class="form-control mb-3"></textarea>
+<button class="btn btn-dark">Send</button>
 </form>
 
 </div>
 </section>
 
-<footer>
-<p>© 2026 Ravindu</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-AOS.init();
-
-// Dark Mode Save
-function toggleMode(){
-    document.body.classList.toggle("dark");
-    localStorage.setItem("mode", document.body.classList.contains("dark"));
-}
-
-if(localStorage.getItem("mode") === "true"){
-    document.body.classList.add("dark");
-}
-
-// Typing Effect
-let text = ["Web Developer","Designer","Freelancer"];
+// typing effect
+let text = ["Web Developer", "UI Designer", "Freelancer"];
 let i=0,j=0,current="",isDeleting=false;
 
 function type(){
@@ -228,15 +172,12 @@ function type(){
 
         if(j==text[i].length) isDeleting=true;
         if(j==0){ isDeleting=false; i++; }
-
     } else i=0;
 
     setTimeout(type,100);
 }
 type();
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
